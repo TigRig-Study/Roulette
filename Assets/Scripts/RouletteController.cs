@@ -10,10 +10,11 @@ public class RouletteController : MonoBehaviour
   {
     if (Input.GetMouseButtonDown(0))
     {
-      // 使うところで Time.deltaTime を乗算すると秒間３回転するスピードになる
-      rotSpeed = 360f * 2;
+      rotSpeed = 50;
     }
 
-    transform.Rotate(0, 0, rotSpeed * Time.deltaTime);
+    transform.Rotate(0, 0, rotSpeed);
+
+    rotSpeed *= 0.98f;
   }
 }
